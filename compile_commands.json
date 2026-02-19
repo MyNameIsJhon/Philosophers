@@ -1,0 +1,19 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-pthread",
+      "-Iincludes",
+      "-c",
+      "-o",
+      "objs/philo.o",
+      "srcs/philo.c"
+    ],
+    "directory": "/Users/jordanriga/Desktop/prog_learning/42-school/philosophers",
+    "file": "/Users/jordanriga/Desktop/prog_learning/42-school/philosophers/srcs/philo.c",
+    "output": "/Users/jordanriga/Desktop/prog_learning/42-school/philosophers/objs/philo.o"
+  }
+]
