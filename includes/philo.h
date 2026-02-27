@@ -6,7 +6,7 @@
 /*   By: jriga <jriga@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 16:40:49 by jriga             #+#    #+#             */
-/*   Updated: 2026/02/19 19:33:27 by jriga            ###   ########.fr       */
+/*   Updated: 2026/02/27 14:29:04 by jriga            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,9 @@ size_t				get_time_since(size_t time_ms);
 t_philo				*init_philos(t_context *ctx);
 t_bool				monitor(t_context *ctx, t_philo *philos);
 t_context			*get_context(char **args, char ac);
+void				philo_end_thread(t_context *ctx, t_philo *philo);
+t_bool				philo_take_first_fork(t_context *ctx, t_philo *philo);
+t_bool				philo_take_second_fork(t_philo *philo);
 
 // NOTE: DEBUG
 

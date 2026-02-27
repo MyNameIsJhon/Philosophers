@@ -51,15 +51,11 @@ int	main(int ac, char **av)
 	t_context	*ctx;
 	t_philo		*philos;
 
-	// TODO: enlever les voids une fois les differentes vars utilisee
 	(void)av;
 	(void)ac;
 	(void)ctx;
 	if (ac < 5)
-	{
-		printf("number_of_philosophers time_to_die time_to_eat time_to_sleep [number_of_times_each_philosopher_must_eat]\n");
 		exit(1);
-	}
 	ctx = get_context(av + 1, ac - 1);
 	philos = init_philos(ctx);
 	threads_create(philos);

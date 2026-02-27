@@ -6,7 +6,7 @@
 /*   By: jriga <jriga@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 19:49:23 by jriga             #+#    #+#             */
-/*   Updated: 2026/02/18 20:44:15 by jriga            ###   ########.fr       */
+/*   Updated: 2026/02/27 14:26:51 by jriga            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,10 @@
 
 static t_bool	philo_is_eating(t_context *ctx, t_philo *philo)
 {
-	pthread_mutex_lock(philo->forks_mtx[0]);
-	pthread_mutex_lock(&philo->is_dead_mtx);
-	if (philo->is_dead)
-	{
-		pthread_mutex_unlock(philo->forks_mtx[0]);
-		pthread_mutex_unlock(&philo->is_dead_mtx);
+	if (!philo_take_first_fork(ctx, philo))
 		return (FALSE);
-	}
-	pthread_mutex_unlock(&philo->is_dead_mtx);
-	philo_print_action("has taken a fork", philo);
-	pthread_mutex_lock(philo->forks_mtx[1]);
-	pthread_mutex_lock(&philo->is_dead_mtx);
-	if (philo->is_dead)
-	{
-		pthread_mutex_unlock(philo->forks_mtx[0]);
-		pthread_mutex_unlock(philo->forks_mtx[1]);
-		pthread_mutex_unlock(&philo->is_dead_mtx);
+	if (!philo_take_second_fork(philo))
 		return (FALSE);
-	}
-	pthread_mutex_unlock(&philo->is_dead_mtx);
 	philo_print_action("is eating", philo);
 	pthread_mutex_lock(&philo->last_eat_mtx);
 	philo->last_eat_ms = get_time_ms();
@@ -83,7 +67,7 @@ static t_bool	philos_routine(t_context *ctx, t_philo *philo)
 {
 	size_t	i;
 
-	i = 0;
+	i = 1;
 	while (1)
 	{
 		if (!philo_is_thinking(ctx, philo))
@@ -99,12 +83,7 @@ static t_bool	philos_routine(t_context *ctx, t_philo *philo)
 			i++;
 		}
 	}
-	pthread_mutex_lock(&philo->thread_ended_mtx);
-	philo->thread_ended = TRUE;
-	pthread_mutex_unlock(&philo->thread_ended_mtx);
-	pthread_mutex_lock(&ctx->ended_threads_mtx);
-	ctx->number_of_ended_threads++;
-	pthread_mutex_unlock(&ctx->ended_threads_mtx);
+	philo_end_thread(ctx, philo);
 	return (TRUE);
 }
 

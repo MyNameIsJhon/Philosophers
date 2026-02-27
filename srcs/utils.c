@@ -49,12 +49,12 @@ long	ft_atol(char *str_nb)
 	return ((long)(nb * (long long)sgn));
 }
 
-size_t	get_time_ms()
+size_t	get_time_ms(void)
 {
-	struct timeval time;
+	struct timeval	time;
 
 	gettimeofday(&time, NULL);
-	return (size_t)((time.tv_sec * 1000000) + time.tv_usec) / 1000;
+	return ((size_t)((time.tv_sec * 1000000) + time.tv_usec) / 1000);
 }
 
 size_t	get_time_since(size_t time_ms)

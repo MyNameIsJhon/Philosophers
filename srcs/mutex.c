@@ -27,10 +27,11 @@ pthread_mutex_t	*init_forks_mtx(size_t number_of_forks)
 	return (forks_mtx);
 }
 
-t_bool	assign_forks_to_philos_mtx(pthread_mutex_t *forks_mtx, t_philo *philo, t_context *ctx)
+t_bool	assign_forks_to_philos_mtx(pthread_mutex_t *forks_mtx, t_philo *philo,
+		t_context *ctx)
 {
-	size_t			i;
-	size_t			max;
+	size_t	i;
+	size_t	max;
 
 	if (!forks_mtx || !philo)
 		return (0);
