@@ -6,7 +6,7 @@
 /*   By: jriga <jriga@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 16:40:49 by jriga             #+#    #+#             */
-/*   Updated: 2026/02/27 14:29:04 by jriga            ###   ########.fr       */
+/*   Updated: 2026/03/23 13:18:43 by jriga            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,9 @@ t_context			*get_context(char **args, char ac);
 void				philo_end_thread(t_context *ctx, t_philo *philo);
 t_bool				philo_take_first_fork(t_context *ctx, t_philo *philo);
 t_bool				philo_take_second_fork(t_philo *philo);
+void				destroy_forks_mtx(pthread_mutex_t *forks_mtx,
+						size_t number_of_forks);
+void				destroy_philos(t_philo *philos, t_context *ctx);
 
 // NOTE: DEBUG
 

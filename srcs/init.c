@@ -6,7 +6,7 @@
 /*   By: jriga <jriga@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 14:21:57 by jriga             #+#    #+#             */
-/*   Updated: 2026/02/27 14:24:58 by jriga            ###   ########.fr       */
+/*   Updated: 2026/03/23 13:19:13 by jriga            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ static void	fill_context_args(t_context *ctx, char **args, char ac)
 	ctx->time_to_die = (size_t)ft_atol(args[1]);
 	ctx->time_to_eat = (size_t)ft_atol(args[2]);
 	ctx->time_to_sleep = (size_t)ft_atol(args[3]);
+	ctx->ended_simulation = FALSE;
 	if (ac >= 5)
 	{
 		ctx->must_eat_quantity = (size_t)ft_atol(args[4]);
@@ -76,6 +77,9 @@ t_philo	*init_philos(t_context *ctx)
 	{
 		philos[i].ctx = ctx;
 		philos[i].id = i + 1;
+		philos[i].is_dead = FALSE;
+		philos[i].thread_ended = FALSE;
+		philos[i].last_eat_ms = ctx->init_time_ms;
 		pthread_mutex_init(&philos[i].is_dead_mtx, NULL);
 		pthread_mutex_init(&philos[i].last_eat_mtx, NULL);
 		pthread_mutex_init(&philos[i].thread_ended_mtx, NULL);

@@ -6,21 +6,21 @@
 #    By: jriga <jriga@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/16 16:39:26 by jriga             #+#    #+#              #
-#    Updated: 2026/02/27 14:29:18 by jriga            ###   ########.fr        #
+#    Updated: 2026/03/23 13:08:25 by jriga            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= philo
 
 CC		= cc
-CFLAGS		= -Wall -Wextra -Werror -pthread -g
+CFLAGS		= -Wall -Wextra -Werror -pedantic-errors -pthread -g
 DEBUG_FLAGS	= -Wall -Wextra -Werror -pthread -g -fsanitize=address,undefined
 
 SRCS_DIR	= srcs
 OBJS_DIR	= objs
 INCS_DIR	= includes
 
-SRCS	= philo.c utils.c debug.c mutex.c routine.c routine_utils.c monitor.c init.c
+SRCS	= philo.c utils.c debug.c mutex.c routine.c routine_utils.c monitor.c init.c destroy.c
 
 OBJS	= $(addprefix $(OBJS_DIR)/, $(SRCS:.c=.o))
 

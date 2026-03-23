@@ -6,6 +6,7 @@
       "-Wextra",
       "-Werror",
       "-pthread",
+      "-g",
       "-Iincludes",
       "-c",
       "-o",
@@ -15,5 +16,131 @@
     "directory": "/Users/jordanriga/Desktop/prog_learning/42-school/philosophers",
     "file": "/Users/jordanriga/Desktop/prog_learning/42-school/philosophers/srcs/philo.c",
     "output": "/Users/jordanriga/Desktop/prog_learning/42-school/philosophers/objs/philo.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-pthread",
+      "-g",
+      "-Iincludes",
+      "-c",
+      "-o",
+      "objs/utils.o",
+      "srcs/utils.c"
+    ],
+    "directory": "/Users/jordanriga/Desktop/prog_learning/42-school/philosophers",
+    "file": "/Users/jordanriga/Desktop/prog_learning/42-school/philosophers/srcs/utils.c",
+    "output": "/Users/jordanriga/Desktop/prog_learning/42-school/philosophers/objs/utils.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-pthread",
+      "-g",
+      "-Iincludes",
+      "-c",
+      "-o",
+      "objs/debug.o",
+      "srcs/debug.c"
+    ],
+    "directory": "/Users/jordanriga/Desktop/prog_learning/42-school/philosophers",
+    "file": "/Users/jordanriga/Desktop/prog_learning/42-school/philosophers/srcs/debug.c",
+    "output": "/Users/jordanriga/Desktop/prog_learning/42-school/philosophers/objs/debug.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-pthread",
+      "-g",
+      "-Iincludes",
+      "-c",
+      "-o",
+      "objs/mutex.o",
+      "srcs/mutex.c"
+    ],
+    "directory": "/Users/jordanriga/Desktop/prog_learning/42-school/philosophers",
+    "file": "/Users/jordanriga/Desktop/prog_learning/42-school/philosophers/srcs/mutex.c",
+    "output": "/Users/jordanriga/Desktop/prog_learning/42-school/philosophers/objs/mutex.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-pthread",
+      "-g",
+      "-Iincludes",
+      "-c",
+      "-o",
+      "objs/routine.o",
+      "srcs/routine.c"
+    ],
+    "directory": "/Users/jordanriga/Desktop/prog_learning/42-school/philosophers",
+    "file": "/Users/jordanriga/Desktop/prog_learning/42-school/philosophers/srcs/routine.c",
+    "output": "/Users/jordanriga/Desktop/prog_learning/42-school/philosophers/objs/routine.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-pthread",
+      "-g",
+      "-Iincludes",
+      "-c",
+      "-o",
+      "objs/routine_utils.o",
+      "srcs/routine_utils.c"
+    ],
+    "directory": "/Users/jordanriga/Desktop/prog_learning/42-school/philosophers",
+    "file": "/Users/jordanriga/Desktop/prog_learning/42-school/philosophers/srcs/routine_utils.c",
+    "output": "/Users/jordanriga/Desktop/prog_learning/42-school/philosophers/objs/routine_utils.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-pthread",
+      "-g",
+      "-Iincludes",
+      "-c",
+      "-o",
+      "objs/monitor.o",
+      "srcs/monitor.c"
+    ],
+    "directory": "/Users/jordanriga/Desktop/prog_learning/42-school/philosophers",
+    "file": "/Users/jordanriga/Desktop/prog_learning/42-school/philosophers/srcs/monitor.c",
+    "output": "/Users/jordanriga/Desktop/prog_learning/42-school/philosophers/objs/monitor.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-pthread",
+      "-g",
+      "-Iincludes",
+      "-c",
+      "-o",
+      "objs/init.o",
+      "srcs/init.c"
+    ],
+    "directory": "/Users/jordanriga/Desktop/prog_learning/42-school/philosophers",
+    "file": "/Users/jordanriga/Desktop/prog_learning/42-school/philosophers/srcs/init.c",
+    "output": "/Users/jordanriga/Desktop/prog_learning/42-school/philosophers/objs/init.o"
   }
 ]

@@ -6,7 +6,7 @@
 /*   By: jriga <jriga@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 16:39:26 by jriga             #+#    #+#             */
-/*   Updated: 2026/02/19 19:37:04 by jriga            ###   ########.fr       */
+/*   Updated: 2026/03/23 13:08:30 by jriga            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ int	main(int ac, char **av)
 	threads_create(philos);
 	monitor(ctx, philos);
 	threads_join(philos);
-	(void)philos;
+	destroy_philos(philos, ctx);
+	destroy_forks_mtx(ctx->forks_mtx, ctx->number_of_philos);
+	free(ctx);
 	return (0);
 }
