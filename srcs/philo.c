@@ -6,7 +6,7 @@
 /*   By: jriga <jriga@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 16:39:26 by jriga             #+#    #+#             */
-/*   Updated: 2026/03/23 13:08:30 by jriga            ###   ########.fr       */
+/*   Updated: 2026/03/23 14:36:22 by jriga            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	main(int ac, char **av)
 	(void)ac;
 	(void)ctx;
 	if (ac < 5)
-		exit(1);
+		return (1);
 	ctx = get_context(av + 1, ac - 1);
 	philos = init_philos(ctx);
 	threads_create(philos);
