@@ -6,16 +6,16 @@
 #    By: jriga <jriga@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/16 16:39:26 by jriga             #+#    #+#              #
-#    Updated: 2026/03/23 13:08:25 by jriga            ###   ########.fr        #
+#    Updated: 2026/03/23 14:00:06 by jriga            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= philo
 
 CC		= cc
+# Ligne 13 et 14 corrigées :
 CFLAGS		= -Wall -Wextra -Werror -pedantic-errors -pthread -g
-DEBUG_FLAGS	= -Wall -Wextra -Werror -pthread -g -fsanitize=address,undefined
-
+DEBUG_FLAGS	= -Wall -Wextra -Werror -pedantic-errors -pthread -fsanitize=thread -g
 SRCS_DIR	= srcs
 OBJS_DIR	= objs
 INCS_DIR	= includes

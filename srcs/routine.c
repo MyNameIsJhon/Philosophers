@@ -96,7 +96,9 @@ void	*start_routine(void *data)
 	if (!philos || !philos->ctx)
 		return (NULL);
 	ctx = philos->ctx;
+	pthread_mutex_lock(&philos->last_eat_mtx);
 	philos->last_eat_ms = get_time_ms();
+	pthread_mutex_unlock(&philos->last_eat_mtx);
 	if (philos->id % 2 == 0)
 		usleep(ctx->time_to_eat * 1000);
 	philos_routine(ctx, philos);

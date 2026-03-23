@@ -87,8 +87,13 @@ t_bool	monitor(t_context *ctx, t_philo *philos)
 		if (ctx->ended_simulation)
 			break ;
 		monitor_check_philos(ctx, philos, max);
+		pthread_mutex_lock(&ctx->ended_threads_mtx);
 		if (ctx->number_of_ended_threads >= max)
+		{
+			pthread_mutex_unlock(&ctx->ended_threads_mtx);
 			break ;
+		}
+		pthread_mutex_unlock(&ctx->ended_threads_mtx);
 	}
 	return (TRUE);
 }
